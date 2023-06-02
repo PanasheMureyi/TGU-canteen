@@ -1,0 +1,105 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/restaurant.css' %}">
+    <!-- <script src="https://kit.fontawesome.com/62f4863f1c.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="{%url 'restaurant'%}">
+    <img src="{% static 'images/camo runners.jpg' %}" alt="Camo Runners" style="width: 50%;">
+</a>
+
+            <nav>
+                <ul>
+                    <li><a href="{%url 'restaurant'%}" class="active">HOME</a></li>
+                    <li><a href="{% url 'menu'%}">Menu</a></li>
+                    {%if user.is_authenticated%}
+                    
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                    {%else%}
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    
+                    {%endif%}
+                    {%if user.is_authenticated%}
+                    <li><a href="{%url 'cart'%}">CART</a></li>
+                    {%else%}
+                    <li><a href="{% url 'login' %}">Cart</a></li>
+                    {%endif%}
+                    <li><a href="{% url 'reviews'%}">Reviews</a></li>
+                    
+                    
+    
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="left-col">
+                <h1>Good Food</h1>
+                <p>
+                    At Tiangong University, we value the well-being of our students. Your health is a priority, and one way to take care of yourself is by choosing to eat nutritious meals. The canteen at Tiangong University offers a wide array of healthy food options that are not only delicious but also beneficial for your overall well-being. From fresh salads filled with vibrant vegetables to nourishing whole-grain dishes, our canteen aims to provide you with the fuel your body needs to thrive. By opting for these nutritious choices, you can enhance your energy levels, sharpen your focus, and perform your best academically. Take a step towards a healthier lifestyle and enjoy the wholesome meals offered by the Tiangong University canteen. Your body and mind will thank you.
+                </p>
+                <div class="cta-btns">
+                    <a href="{%url 'menu'%}" class="primary-cta">Go to Menu</a>
+                    <a href="" class="secondary-cta">
+                        <!-- <i class="fa-solid fa-arrow-right">hello</i> -->
+                        
+                    </a>
+                </div>
+                <div class="news">
+                    <p class="employees">1912</p>
+                    <p class="details">
+                        Tiangong University, formerly Tianjin Polytechnic University.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="right-col">
+                {%for item in menuitems%}
+                {%if item.id == 1%}
+                <div class="card card1">
+                    <div class="card-details">
+                        
+                        <div>
+                            <a href="{%url 'menu'%}" class="product-title">{{item.name}}</a>
+                            <p>{{item.description}}</p>
+                        </div>
+                        <p class="product-price">{{item.price}}</p>
+                    </div>
+                </div>
+                {%elif item.id == 2%}
+                <div class="card card2">
+                    <div class="card-details">
+                        
+                        <div>
+                            <a href="{%url 'menu'%}" class="product-title">{{item.name}}</a>
+                            <p>{{item.description}}</p>
+                        </div>
+                        <p class="product-price">{{item.price}}</p>
+                    </div>
+                </div>
+                {%elif item.id == 3%}
+                <div class="card card3">
+                    <div class="card-details">
+                        
+                        <div>
+                            <a href="{%url 'menu'%}" class="product-title">{{item.name}}</a>
+                            <p>{{item.description}}</p>
+                        </div>
+                        <p class="product-price">{{item.price}}</p>
+                    </div>
+                </div>
+                {%endif%}
+                {%endfor%}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

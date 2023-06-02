@@ -1,0 +1,42 @@
+body {
+  background-color: #42145F;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFD700;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+button {
+  background-color: #FFD700;
+  color: #42145F;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

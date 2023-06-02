@@ -1,0 +1,28 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Success</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/checkout.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Order Placed Successfully</h1>
+    <p>Your order has been placed successfully!</p>
+    <p>Order number: <span id="order-id">{{ order.id }}</span></p>
+    <p>Order total: $<span id="order-total">{{ order.total_price }}</span></p>
+    <p>Restaurant: <span id="restaurant-name">{{ order.restaurant.name }}</span></p>
+    <p>Order items:</p>
+    <ul>
+      {% for item in order.order_items.all %}
+        <li>{{ item.menu_item.name }} x{{ item.quantity }}</li>
+      {% endfor %}
+    </ul>
+    <p>Thank you for your order!</p>
+    <button><bold><a href="{{ request.META.HTTP_REFERER }}">Back</a></bold></button>
+  </div>
+</body>
+</html>

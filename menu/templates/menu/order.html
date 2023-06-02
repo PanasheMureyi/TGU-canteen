@@ -1,0 +1,15 @@
+{% extends "menu/base.html" %}
+
+{% block content %}
+<h1>Order</h1>
+<form method="POST" action="{% url 'add_to_cart' item_id %}">
+    {% csrf_token %}
+    <select name="items"> 
+        <option value="{{ items.pk }}">{{ items.name }} - {{ items.price }}</option>
+    </select>
+    <input type="number" name="quantity" value="1">
+    <button type="submit"><a href="{%url 'add_to_cart' items.pk%}">Add to order</a> </button>
+    <button><a href="{{ request.META.HTTP_REFERER }}">Back</a></button>
+    
+</form>
+{% endblock %}

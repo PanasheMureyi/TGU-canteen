@@ -1,0 +1,51 @@
+/* Centering container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styling for the form container */
+.form-container {
+  width: 400px;
+}
+
+/* Styling for form elements */
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.form-container button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styling for the back button */
+.back-button {
+  margin-top: 10px;
+}
+
+.back-button a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.back-button a:hover {
+  background-color: #d32f2f;
+}
+
+/* Styling for error messages */
+.error-message {
+  color: red;
+}

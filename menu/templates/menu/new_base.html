@@ -1,0 +1,47 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/restaurant.css' %}">
+    <!-- <script src="https://kit.fontawesome.com/62f4863f1c.js" crossorigin="anonymous"></script> -->
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <a href="{%url 'restaurant'%}">
+    <img src="{% static 'images/camo runners.jpg' %}" alt="Camo Runners" >
+</a>
+            <nav>
+                <ul>
+                    <li><a href="{%url 'restaurant'%}" class="active">HOME</a></li>
+                    <li><a href="{% url 'menu'%}">Menu</a></li>
+                    {%if user.is_authenticated%}
+                    
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                    {%else%}
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    
+                    {%endif%}
+                    {%if user.is_authenticated%}
+                    <li><a href="{%url 'cart'%}">CART</a></li>
+                    {%else%}
+                    <li><a href="{% url 'login' %}">Cart</a></li>
+                    {%endif%}
+                    <li><a href="{% url 'reviews'%}">Reviews</a></li>
+                    
+    
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {%block content%}
+            {%endblock%}
+        </main>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}TGU RESTAURANTS{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'restaurant' %}">RESTAURANTS</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'cart' %}">CART</a></li>
+        {%else%}
+        <li><a href="{% url 'login' %}">CART</a></li>
+        {%endif%}
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        
+      </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <footer>
+    <p>&copy; 2023 My Restaurant. All rights reserved.</p>
+  </footer>
+</body>
+</html>

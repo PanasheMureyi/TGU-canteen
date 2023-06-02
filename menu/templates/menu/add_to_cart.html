@@ -1,0 +1,10 @@
+{%extends 'menu/base.html'%}
+
+{%block context%}
+<form method="POST" action="{% url 'add_to_cart' item_id %}">
+    {% csrf_token %}
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" value="1">
+    <input type="submit" value="Add to cart">
+</form>
+{%endblock%}

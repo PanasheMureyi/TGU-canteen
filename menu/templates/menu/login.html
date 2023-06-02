@@ -1,0 +1,16 @@
+{% extends "menu/new_base.html" %}
+
+{%block form%}{%endblock%}
+{% block content %}
+<h1>Login</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    <button type="submit">Login</button>
+    <button type="submit"><a href="{%url 'register'%}">Register Here</a></button>
+</form>
+{% endblock %}
+

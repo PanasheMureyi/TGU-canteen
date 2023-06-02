@@ -1,0 +1,26 @@
+{% extends "menu/base.html" %}
+
+{% block content %}
+  <h1>Restaurants</h1>
+  <ul>
+    {% for restaurant in restaurants %}
+      <li>
+        <a href="{% url 'menu' restaurant.id %}">{{ restaurant.name }}</a>
+        <br>
+        <a href="{% url 'restaurant-reviews' restaurant.id %}">Add a review</a>
+        <br>
+        {% if user.is_authenticated %}
+          <ul>
+            {% for review in restaurant.reviews%}
+              <li>{{ review }}</li>
+            {% empty %}
+              <li>No reviews yet.</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% empty %}
+      <li>No restaurants found.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
