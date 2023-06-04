@@ -21,13 +21,13 @@
           {% if item.stock == 0 %}
             <div class="item-image out-of-stock">
               <span>Out of Stock</span>
-              <img src="{% static 'images/placeholder.jpg' %}" alt="{{ item.name }}">
+              <img src="{{item.image.url}}" alt="{{ item.name }}">
             </div>
           {% else %}
-            <a {% if not user.is_authenticated %}href="{% url 'login' %}"{% else %}href="{% url 'add_to_cart' item.pk %}"{% endif %}>
+            
               <div class="item-image">
-                {% if item.image %}
-                  <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                {% if item.image.url %}
+                  <img src="{{item.image.url}}" alt="{{ item.name }}">
                 
                 {% endif %}
               </div>
@@ -35,8 +35,8 @@
           {% endif %}
           <div class="item-details">
             <h3>{{ item.name }}</h3>
-            <p>{{ item.description }}</p>
             <p>Price: {{ item.price }}</p>
+            <span><a {% if not user.is_authenticated %}href="{% url 'login' %}"{% else %}href="{% url 'add_to_cart' item.pk %}"{% endif %}>add-to-cart</a></span>
           </div>
         </li>
       {% empty %}
