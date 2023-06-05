@@ -34,7 +34,7 @@
             </a>
           {% endif %}
           <div class="item-details">
-            <h3>{{ item.name }}</h3>
+            <h3><a href="{%url 'product' item.id%}">{{ item.name }}</a></h3>
             <p>Price: {{ item.price }}</p>
             <span><a {% if not user.is_authenticated %}href="{% url 'login' %}"{% else %}href="{% url 'add_to_cart' item.pk %}"{% endif %}>add-to-cart</a></span>
           </div>

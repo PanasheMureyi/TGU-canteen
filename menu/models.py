@@ -28,9 +28,6 @@ class Restaurant(models.Model):
         self.save()
 
 
-from django.db import models
-from django.utils import timezone
-from django.db.models import Avg
 
 class MenuItem(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)

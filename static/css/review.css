@@ -1,51 +1,101 @@
-/* Centering container */
-.container {
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
-/* Styling for the form container */
-.form-container {
-  width: 400px;
+.container {
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Styling for form elements */
-.form-container input,
-.form-container textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-.form-container button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+h2 {
+  color: #660099;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #660099;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #660099;
+  text-decoration: none;
+}
+
+hr {
   border: none;
+  border-top: 1px solid #660099;
+  margin: 20px 0;
+}
+
+small {
+  color: #666;
+}
+
+button {
+  background-color: #660099;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
   cursor: pointer;
 }
 
-/* Styling for the back button */
-.back-button {
-  margin-top: 10px;
-}
-
-.back-button a {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #f44336;
+button a {
   color: white;
   text-decoration: none;
-  border-radius: 3px;
 }
 
-.back-button a:hover {
-  background-color: #d32f2f;
+/* Existing styles */
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-/* Styling for error messages */
-.error-message {
-  color: red;
+.back-button,
+.add-comment-button {
+  background-color: #660099;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-comment-button {
+  margin-left: 10px;
 }

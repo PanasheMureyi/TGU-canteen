@@ -1,0 +1,26 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant App - Product Detail</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+</head>
+<body>
+ <div class="product">
+        <div class="product-images">
+            
+            <div class="image-circle">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="image-hover">
+            </div>
+            
+        </div>
+        <div class="product-info">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>Price: ${{ product.price }}</p>
+            <p>Stock: {{ product.stock }}</p>
+        </div>
+    </div>
+    <button><bold><a href="{{ request.META.HTTP_REFERER }}">Back</a></bold></button>
+</body>
+</html>

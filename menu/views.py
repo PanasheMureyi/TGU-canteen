@@ -24,6 +24,10 @@ def menu(request):
     context = {'items': menu_items, 'query': query}
     return render(request, 'menu/menu.html', context)
 
+def product_detail(request, product_id):
+    product=MenuItem.objects.get(id=product_id)
+    
+    return render(request, 'menu/product.html', {'product': product})
 
 
 

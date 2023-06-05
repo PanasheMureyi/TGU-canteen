@@ -17,7 +17,9 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
     path('reviews/', views.RestaurantReviews, name='reviews'),
     path('add-review',views.add_review,name='add-review'),
-    path('delete-review/<int:review_id>/',views.delete_review,name='delete-review')
+    path('delete-review/<int:review_id>/',views.delete_review,name='delete-review'),
+    #path('product/<int:product_id>/', views.product,name='product'),
+     path('product/<int:product_id>/', views.product_detail, name='product'),
     # path('remove-from-cart/<int:item_id>/', views.remove_from_cart, name='remove_from_cart'),
     # path('view-cart/', views.view_cart, name='view_cart'),
     
